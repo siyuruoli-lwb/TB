@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../lib/jquery-1.12.4.js"></script>
+    <link rel="stylesheet" href="../css/cart.css">
+    <link rel="stylesheet" href="../css/reset.css">
+</head>
+<body>
+    <h1 class="top">my shopping cart</h1>
+    <h2 class="later"></h2>
+    <ul>
+    </ul>
+    <div class="payment">
+        <strong>
+            合计：￥
+            <span>0</span>
+        </strong>
+    </div>
+
+    <!-- 在详情页的加入购物车按钮:增 -->
+    <!-- <button class="addToCart">在详情页加入购物车功能按钮</button> -->
+    <!-- 
+        增加商品接口:
+            url:./interface/addwq.php
+            参数:
+                id:
+                name:
+                img:
+                price:
+                num:
+            返回值:json数据
+                {
+                    code:1   如果code是1表示成功,code是0表示失败
+                }
+
+     -->
+    
+    <!-- 展示购物车内容按钮:查 -->
+    <button class="showCart">查看购物车</button>
+     <!-- 
+        查询购物车商品接口:
+            url:./interface/showlist.php
+            参数:无
+            返回值:json数据
+                {
+                    code:1  如果code是1表示成功,code是0表示失败
+                    data:{  data就是查询到的购物车数据
+                        
+                    }
+                }
+      -->
+    <!-- 删除商品按钮:删 -->    
+    <!-- 
+        删除商品接口:
+            url:./interface/delwq.php
+            参数:id
+            返回值:json数据
+                {
+                    code:1   如果code是1表示成功,code是0表示失败
+                }
+     -->
+    <!-- 购物车页面的增加商品数量按钮:改 -->
+    <!-- <button class="addNum">+</button> -->
+    <!-- 购物车页面的减少商品数量按钮:改 -->
+    <!-- <button class="cutNum">-</button> -->
+     <!-- 
+        修改商品数量接口(只能增加或减少一个):
+            url:./interface/updatewq.php
+            参数:
+                id,
+                type:"add"  //add表示增加,其他表示减少
+            返回值:json数据
+                {
+                    code:1   如果code是1表示成功,code是0表示失败
+                }
+     -->
+    <script src="../js/cart.js"></script>
+</body>
+</html>

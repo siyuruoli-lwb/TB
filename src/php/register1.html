@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <h1>我是注册页面</h1>
+    <input type="text" value="请输入用户名" id="un">
+    <input type="text" value="请输入密码" id="pw">
+    <input type="button" value="注册" id="submit"> -->
+
+
+    <h1>我是注册页面</h1>
+    <input type="text" placeholder="请输入用户名" id="un">
+    <input type="text" placeholder="请输入密码" id="pw">
+    <input type="button" value="注册" id="submit">
+    
+    <script src="../lib/jquery-1.12.4.js"></script>
+    <script>
+        $('#submit').click(function(){
+            $.ajax({
+                method:'post',
+                url:'./register1.php',
+                data:{
+                    username:$('#un').val(),
+                    password:$('#pw').val()
+                },
+                success:function(data){
+                    if(data.code==1){
+                        //表示成功,跳转到登陆页面
+                        location.href="./login.html"
+                    }else{
+                        //表示失败
+                        alert(data.msg)
+                    }
+                },
+                dataType:'json'
+            })
+        })
+
+
+    
+    </script>
+</body>
+</html>
